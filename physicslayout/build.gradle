@@ -1,0 +1,24 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "com.vanniktech.maven.publish"
+apply from: "../publish.gradle"
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    api("org.jbox2d:jbox2d-library:2.2.1.1")
+    api("com.commit451:translationviewdraghelper:2.0.3")
+}
